@@ -22,14 +22,6 @@ h2 {
   margin-top: 40px;
   text-align: center;
 }
-#title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-#content {
-  margin: 0% 25% 0% 25%;
-}
 #video {
   display: flex;
   justify-content: center;
