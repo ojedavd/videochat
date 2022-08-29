@@ -101,7 +101,7 @@ socket.on("connect", () => {
 });
 
 function joinRoom() {
-  serverMsg("Buscando usuarios...");
+  serverMsg("Conectando...");
   waitingOnConnection = true;
   joined = false;
   socket.emit("join room", peerID, videoOn);

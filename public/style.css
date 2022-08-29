@@ -96,7 +96,7 @@ video {
   margin: 0;
 }
 #form > button {
-  background: #d65a31;
+  background: rgb(0, 166, 255);
   border: none;
   padding: 0 2rem;
   margin: 0.25rem;
@@ -117,7 +117,7 @@ video {
   color: #eeeeee;
 }
 #bottom-bar > button:hover {
-  background: rgb(0, 127, 196);
+  background: red;
 }
 #input {
   border: none;
