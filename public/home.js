@@ -53,7 +53,7 @@ function testMedia() {
     .then((stream) => {
       theStream = stream;
       document.getElementById("webcam").srcObject = theStream;
-      window.location = "https://everybodylies.herokuapp.com/videochat.html";
+      window.location = "https://facetwoface.herokuapp.com/videochat.html";
     })
     .catch((e) => {
       console.log(e);
