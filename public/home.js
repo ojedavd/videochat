@@ -63,6 +63,3 @@ function testMedia() {
         "Media is not connected, please enable media permissions in your browser to access Video Chat";
     });
 }
-function textChat() {
-  window.location = "https://aidens-omegle-chat.herokuapp.com/";
-}
