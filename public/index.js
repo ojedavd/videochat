@@ -30,7 +30,7 @@ form.addEventListener("submit", function (e) {
     let msg = input.value;
     socket.emit("message", msg);
     let item = document.createElement("li");
-    item.innerHTML = "<h4 id='you'>Tú: </h4>" + msg;
+    item.innerHTML = "<span id='you'>Tú: </span>" + msg;
     messages.appendChild(item);
     input.value = ""; //clear
     theMessages.scrollTo(0, theMessages.scrollHeight);
