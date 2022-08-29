@@ -20,7 +20,7 @@ let videoOn;
 const myPeer = new Peer();
 
 socket.on("oc", (oc) => {
-  onlineCounter.innerHTML = "Usuarios conectados: " + oc;
+  onlineCounter.innerHTML = oc;
 });
 
 form.addEventListener("submit", function (e) {
