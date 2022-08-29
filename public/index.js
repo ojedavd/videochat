@@ -11,7 +11,7 @@ let otherPeerID;
 let form = document.getElementById("form");
 let input = document.getElementById("input");
 let theMessages = document.getElementById("messages");
-let onlineCounter = document.querySelector("h3");
+let onlineCounter = document.getElementById("counter");
 
 let joined = false;
 let waitingOnConnection = false;
