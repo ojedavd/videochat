@@ -20,7 +20,7 @@ let videoOn;
 const myPeer = new Peer();
 
 socket.on("oc", (oc) => {
-  onlineCounter.innerHTML = "Users online: " + oc;
+  onlineCounter.innerHTML = "Usuarios conectados: " + oc;
 });
 
 form.addEventListener("submit", function (e) {
@@ -30,16 +30,16 @@ form.addEventListener("submit", function (e) {
     let msg = input.value;
     socket.emit("message", msg);
     let item = document.createElement("li");
-    item.innerHTML = "<h4 id='you'>You: </h4>" + msg;
+    item.innerHTML = "<h4 id='you'>Tú: </h4>" + msg;
     messages.appendChild(item);
     input.value = ""; //clear
     theMessages.scrollTo(0, theMessages.scrollHeight);
   } else if (waitingOnConnection) {
-    serverMsg("Waiting for stranger");
+    serverMsg("Esperando conexión");
   } else if (!joined) {
-    serverMsg('You havent joined a Room yet! Please click "New Room"');
+    serverMsg('Clic en "Siguiente"');
   } else {
-    serverMsg("You cannot send a blank message.");
+    serverMsg("No puedes enviar un mensaje en blanco.");
   }
 });
 
@@ -81,7 +81,7 @@ socket.on("connect", () => {
         videoOn = false;
         console.log("No Video!");
         serverMsg(
-          "Webcam not detected, please refresh page and make sure your webcam permission are correctly set! (Chrome works best)"
+          "Cámara no detectada, actualice la página y verifique los permisos para utilizar la cámara"
         );
         localStream = {};
         console.log("localStream: " + localStream);
@@ -95,13 +95,13 @@ socket.on("connect", () => {
       videoOn = false;
       console.log("No Video!");
       serverMsg(
-        "Webcam not detected, please refresh page and make sure your webcam permission are correctly set! (Chrome works best)"
+        "Cámara no detectada, actualice la página y verifique los permisos para utilizar la cámara"
       );
     });
 });
 
 function joinRoom() {
-  serverMsg("Searching for a stranger...");
+  serverMsg("Buscando usuarios...");
   waitingOnConnection = true;
   joined = false;
   socket.emit("join room", peerID, videoOn);
@@ -126,19 +126,19 @@ socket.on("user joined", (id, pid, vOn) => {
   } catch (e) {
     console.log("Error connecting to User: " + e);
     serverMsg(
-      "Media connection not established due to your webcam having an issue, Chat only."
+      "Problemas con la cámara, solo puede utilizar texto."
     );
     socket.emit(
       "message",
-      "Media connection not established due to stranger having a webcam error, He cannot see or hear you, Chat only.",
+      "Problemas con la cámara, solo puede utilizar texto.",
       true
     );
   }
-  serverMsg("Connected to a stranger, say hi!");
+  serverMsg("Conexión establecida!");
   joined = true;
   waitingOnConnection = false;
   if (!vOn) {
-    document.getElementById("vidoff").innerHTML = "Stranger has no video";
+    document.getElementById("vidoff").innerHTML = "El usuario no tiene video";
   }
   otherUser = id; //handshake
 });
@@ -153,9 +153,9 @@ socket.on("other user", (ou, vOn) => {
   console.log("you joined: " + ou);
   joined = true;
   waitingOnConnection = false;
-  serverMsg("Connected to a stranger, say hi!");
+  serverMsg("Conexión establecida!");
   if (!vOn) {
-    document.getElementById("vidoff").innerHTML = "Stranger has no video";
+    document.getElementById("vidoff").innerHTML = "El usuario no tiene video";
   }
   otherUser = ou;
 });
@@ -164,7 +164,7 @@ socket.on("dc", (msg) => {
   console.log(msg);
   document.getElementById("remote-video").srcObject = undefined;
   joined = false;
-  serverMsg('User has disconnected, click "New Room"');
+  serverMsg('Usuario desconectado, clic en "Siguiente"');
   document.getElementById("vidoff").innerHTML = "";
 });
 
@@ -183,7 +183,7 @@ function serverMsg(msg) {
 
 function strangerMsg(msg) {
   let item = document.createElement("li");
-  item.innerHTML = "<h4>Stranger: </h4>" + msg;
+  item.innerHTML = "<h4>Usuario: </h4>" + msg;
   messages.appendChild(item);
   theMessages.scrollTo(0, theMessages.scrollHeight);
 }
