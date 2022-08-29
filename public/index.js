@@ -176,14 +176,14 @@ socket.on("other peer", (pid) => {
 
 function serverMsg(msg) {
   let item = document.createElement("li");
-  item.innerHTML = "<h4 id='server'>Server: </h4>" + msg;
+  item.innerHTML = "<span id='server'>Server: </span>" + msg;
   messages.appendChild(item);
   theMessages.scrollTo(0, theMessages.scrollHeight);
 }
 
 function strangerMsg(msg) {
   let item = document.createElement("li");
-  item.innerHTML = "<h4>Usuario: </h4>" + msg;
+  item.innerHTML = "<span>Usuario: </span>" + msg;
   messages.appendChild(item);
   theMessages.scrollTo(0, theMessages.scrollHeight);
 }
