@@ -15,7 +15,8 @@ body {
   grid-template-areas: 'cabecera cabecera'
                        'contenido lateral'
                        'pie pie';
-  grid-template-rows: 20% 70% 10%;
+  border: 1px solid black;
+  grid-template-rows: 20% auto 10%;
 }
 
 .caja {
@@ -43,4 +44,6 @@ body {
 .c5 {
   background-color: lightpink;
   grid-area: pie;
+  clear: both;
+  position: static;
 }
