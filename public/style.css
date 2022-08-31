@@ -6,44 +6,29 @@
 body {
   background-color: antiquewhite;
   font-family: Arial, Helvetica, sans-serif;
-  text-align: center;
 }
 
 .grid-layout {
-  display: grid;
+  display: flex;
   height: 100vh;
-  grid-template-areas: 'cabecera cabecera'
-                       'contenido lateral'
-                       'pie pie';
-  border: 1px solid black;
-  grid-template-rows: 20% auto 10%;
+  flex-direction: column;
 }
 
 .caja {
-  border: 4px solid black;
-  background-color: lightgray;
-  text-align: center;
-  padding: 20px;
+  border: 1px solid black;
 }
 
 .c1 {
   background-color: lightblue;
-  grid-area: cabecera;
+  flex: 1;
 }
 
 .c3 {
   background-color: lightgreen;
-  grid-area: contenido;
-}
-
-.c4 {
-  background-color: lightcyan;
-  grid-area: lateral;
+  flex: 12;
 }
 
 .c5 {
   background-color: lightpink;
-  grid-area: pie;
-  clear: both;
-  position: static;
+  flex: 1;
 }
