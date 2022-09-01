@@ -32,7 +32,7 @@
   flex: 1.7;
 }
 
-#vid {
+#local-video, #remote-video {
   width: 10vw;
   height: 10vh;
 }
