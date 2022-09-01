@@ -17,8 +17,14 @@
 }
 
 .header {
-  display: block;
+  display: flex;
   background-color: beige;
+  justify-content: space-between;
+  padding: 0 10px;
+}
+
+.header h3 {
+  margin-top: 3px;
 }
 
 .video {
@@ -35,12 +41,18 @@
   display: flex;
 }
 
-.form .input {
-  height: 30px;
+.form form {
+  display: flex;
+  height: 40px;
   flex: 4;
 }
 
-.form button {
-  height: 33px;
+.form form .input {
+  height: 43px;
+  flex: 3;
+}
+
+.form form button {
+  height: 43px;
   flex: 1; 
 }
