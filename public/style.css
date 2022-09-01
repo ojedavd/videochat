@@ -33,12 +33,18 @@
   display: flex;
 }
 
-#local-video, #remote-video {
-  width: 50vw;
-  height: 50vh;
+#local-video {
+  width: 50%;
+  height: 50%;
+}
+
+#remote-video {
+  width: 50%;
+  height: 50%;
 }
 
 .chat {
+  background-color: beige;
   flex: 1;
 }
 
