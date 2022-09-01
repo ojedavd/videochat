@@ -23,11 +23,10 @@
 
 .video {
   background-color: black;
-  flex: 1;
+  flex: 1.7;
 }
 
 .chat {
-  background-color: aquamarine;
   flex: 1;
 }
 
