@@ -2,42 +2,42 @@ let cameraActive = false;
 let status = document.getElementById("status");
 let theStream;
 let errorMessage = document.getElementById("media-error");
-function activateWebcam() {
-  navigator.getUserMedia =
-    navigator.getUserMedia ||
-    navigator.mozGetUserMedia ||
-    navigator.webkitGetUserMedia ||
-    navigator.msGetUserMedia;
-  const constraints = {
-    video: {
-      width: {
-        min: 480,
-        max: 1280,
-      },
-      aspectRatio: 1.33333,
-    },
-    audio: true,
-  };
-  navigator.mediaDevices
-    .getUserMedia(constraints)
-    .then((stream) => {
-      console.log("Got MediaStream:", stream);
-      theStream = stream;
-      document.getElementById("webcam").srcObject = theStream;
-      if (stream.active) {
-        cameraActive = true;
-        status.innerHTML = "Connected";
-        status.className = "active";
-        errorMessage.innerHTML = "";
-      } else {
-      }
-    })
-    .catch((e) => {
-      console.log(e);
-      status.innerHTML = "Media not connected";
-      status.className = "error";
-    });
-}
+// function activateWebcam() {
+//   navigator.getUserMedia =
+//     navigator.getUserMedia ||
+//     navigator.mozGetUserMedia ||
+//     navigator.webkitGetUserMedia ||
+//     navigator.msGetUserMedia;
+//   const constraints = {
+//     video: {
+//       width: {
+//         min: 480,
+//         max: 1280,
+//       },
+//       aspectRatio: 1.33333,
+//     },
+//     audio: true,
+//   };
+//   navigator.mediaDevices
+//     .getUserMedia(constraints)
+//     .then((stream) => {
+//       console.log("Got MediaStream:", stream);
+//       theStream = stream;
+//       document.getElementById("webcam").srcObject = theStream;
+//       if (stream.active) {
+//         cameraActive = true;
+//         status.innerHTML = "Connected";
+//         status.className = "active";
+//         errorMessage.innerHTML = "";
+//       } else {
+//       }
+//     })
+//     .catch((e) => {
+//       console.log(e);
+//       status.innerHTML = "Media not connected";
+//       status.className = "error";
+//     });
+// }
 function testMedia() {
   navigator.getUserMedia =
     navigator.getUserMedia ||
@@ -52,8 +52,8 @@ function testMedia() {
     .getUserMedia(constraints)
     .then((stream) => {
       theStream = stream;
-      document.getElementById("webcam").srcObject = theStream;
-      window.location = "http://127.0.0.1:5500/public/videochat.html";
+      // document.getElementById("webcam").srcObject = theStream;
+      window.location = "https://facetwoface.herokuapp.com/videochat.html";
     })
     .catch((e) => {
       console.log(e);
