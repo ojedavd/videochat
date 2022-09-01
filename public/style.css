@@ -30,11 +30,12 @@
 .video {
   background-color: black;
   flex: 1.7;
+  display: flex;
 }
 
 #local-video, #remote-video {
-  width: 10vw;
-  height: 10vh;
+  width: 50vw;
+  height: 50vh;
 }
 
 .chat {
