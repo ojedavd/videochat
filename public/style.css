@@ -34,8 +34,8 @@
 }
 
 #local-video {
-  top: 2%;
-  right: 2%;
+  top: 5%;
+  right: 1%;
   width: 80px;
   height: 80px;
   z-index: 100;
