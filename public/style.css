@@ -21,10 +21,19 @@
   background-color: beige;
 }
 
+.video {
+  background-color: black;
+  flex: 1;
+}
+
+.chat {
+  background-color: aquamarine;
+  flex: 1;
+}
+
 .form {
   background-color: blueviolet;
   display: flex;
-  clear: right;
 }
 
 .form .input {
