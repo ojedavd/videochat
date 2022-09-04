@@ -35,7 +35,7 @@ form.addEventListener("submit", function (e) {
     input.value = ""; //clear
     theMessages.scrollTo(0, theMessages.scrollHeight);
   } else if (waitingOnConnection) {
-    serverMsg("Esperando conexión");
+    serverMsg("Esperando conexión...");
   } else if (!joined) {
     serverMsg('Clic en "Siguiente"');
   } else {
@@ -120,7 +120,6 @@ socket.on("user joined", (id, pid, vOn) => {
   otherPeerID = pid;
   console.log("User connected: " + id + " " + pid);
   socket.emit("send peerid", id, peerID);
-  theMessages.innerHTML = "";
   try {
     connectToNewUser(pid, localStream);
   } catch (e) {
@@ -149,7 +148,6 @@ function connectToNewUser(pid, stream) {
   });
 }
 socket.on("other user", (ou, vOn) => {
-  theMessages.innerHTML = "";
   console.log("you joined: " + ou);
   joined = true;
   waitingOnConnection = false;
@@ -175,6 +173,7 @@ socket.on("other peer", (pid) => {
 });
 
 function serverMsg(msg) {
+  theMessages.innerHTML = ""
   let item = document.createElement("li");
   item.innerHTML = "<span id='server'>Server: </span>" + msg;
   messages.appendChild(item);
