@@ -162,7 +162,7 @@ socket.on("dc", (msg) => {
   console.log(msg);
   document.getElementById("remote-video").srcObject = undefined;
   joined = false;
-  serverMsg('Usuario desconectado, clic en "Siguiente"');
+  serverMsg('Usuario desconectado..');
   document.getElementById("vidoff").innerHTML = "";
 });
 
