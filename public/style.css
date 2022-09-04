@@ -54,6 +54,18 @@
   flex: 1;
 }
 
+.server {
+  color: gray;
+}
+
+.you {
+  color: #22bbff;
+}
+
+h4 {
+  color: #d65a31;
+}
+
 .form {
   background-color: blueviolet;
   display: flex;

@@ -175,7 +175,7 @@ socket.on("other peer", (pid) => {
 function serverMsg(msg) {
   theMessages.innerHTML = ""
   let item = document.createElement("li");
-  item.innerHTML = "<b id='server'>Server: </b>" + msg;
+  item.innerHTML = "<b id='server'>" + msg + "</b>";
   messages.appendChild(item);
   theMessages.scrollTo(0, theMessages.scrollHeight);
 }
